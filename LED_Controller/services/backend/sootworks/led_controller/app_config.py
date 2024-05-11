@@ -65,10 +65,21 @@ class LedControllerSettings(BaseSettings):
     channel_mapping: LedControllerChannelMapping = LedControllerChannelMapping()
 
 
+class Transition(BaseSettings):
+    duration_s: float = 0.4
+    frame_rate: int = 30
+
+
+class Animation(BaseSettings):
+    linear_transition: Transition = Transition()
+
+
 class LedControllerServiceConfiguration(BaseSettings):
     settings_backup: Path = Path("~/led_controller_settings.json")
-    power_relay_pins: tuple[int, ...] = Field(default_factory=lambda: tuple(22, 23))
-    led_frequency_hz: int = 60
+    power_relay_pins: tuple[int, ...] = Field(default_factory=lambda: (22, 23))
+    power_on_signal_value: int = 0
+    animation: Animation = Animation()
+    led_frequency_hz: int = 1600
     controller_settings: dict[LedControllerId, LedControllerSettings] = Field(
         default_factory=lambda: {"pca9685": LedControllerSettings()},
     )

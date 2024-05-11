@@ -1,6 +1,7 @@
 import logging
 
 from dependency_injector.wiring import Provide, inject
+
 from sootworks.led_controller.app_config import configuration
 from sootworks.led_controller.containers import Container
 from sootworks.led_controller.domain.exception import translate_service_exceptions

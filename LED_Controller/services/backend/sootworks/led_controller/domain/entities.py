@@ -11,7 +11,12 @@ class Color(Enum):
     WHITE = "white"
 
 
+class PowerState(Enum):
+    ON = "on"
+    OFF = "off"
+
+
 # Models
 class ColorIntensity(BaseModel):
     color: Color
-    value: float
+    value: float  # [%], [0.0, 1.0]

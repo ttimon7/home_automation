@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "led_controller"
-version = "1.0.0"
+version = "1.1.0"
 description = "LED controller service."
 authors = ["Timon Tomas <ttimon7@gmail.com>"]
 readme = "README.md"
 packages = [{ include = "sootworks" }]
 include = [
-    { path = "sootworks/led_controller/static", format = [
+    { path = "sootworks/led_controller/static/**/*", format = [
         "sdist",
         "wheel",
     ] },
@@ -50,3 +50,59 @@ plugins = ["pydantic.mypy"]
 
 [tool.coverage.run]
 omit = ['tests/*', 'sootworks/led_controller/persistence/alembic/*']
+
+
+[tool.ruff]
+# See https://beta.ruff.rs/docs/rules/ for details
+select = [
+    "F",   # Pyflakes, included in default
+    "E",
+    "W",   # pycodestyles errors and warnings
+    "I",   # sorting
+    "ANN", # force annotations
+    "C",
+    "C4",
+    "EM",
+    "COM",
+    "ISC", # flake8 rules
+    "ICN",
+    "G",
+    "INP",
+    "Q",
+    "PIE",
+    "PYI",
+    "T20",
+    "BLE",
+    "ARG",
+    "TID",
+    "SLF",
+    "N",
+    "RET",
+    "RSE",
+    "ERA",
+    "PL",  # pylint
+]
+ignore = ["ANN401", "ANN101", "G004", "ANN102", "N818"]
+unfixable = []
+extend-exclude = [
+    ".nox",
+    ".pytest_cache",
+    ".ruff_cache",
+    "test-results",
+    ".venv",
+    "build",
+    "dist",
+    "temp",
+    ".coverage",
+    "noxfile.py",
+]
+line-length = 120
+
+# Assume Python 3.11.
+target-version = "py311"
+[tool.ruff.per-file-ignores]
+"**/tests/*" = [
+    "ARG001",
+    "ARG004",
+    "INP001",
+] # produces a lot of false positives due to usage of fixtures in tests

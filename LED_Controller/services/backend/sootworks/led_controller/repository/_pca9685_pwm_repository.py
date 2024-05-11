@@ -2,6 +2,7 @@ import logging
 
 import board
 from adafruit_pca9685 import PCA9685
+
 from sootworks.led_controller.app_config import Environment, configuration
 from sootworks.led_controller.domain.repository import PwmRepository
 
@@ -20,8 +21,6 @@ class PCA9685PwmRepository(PwmRepository):
             self.pca = PCA9685(self.i2c)
             # Set the PWM frequency [Hz].
             self.pca.frequency = configuration.led_controller_service.led_frequency_hz
-
-        self.powered_on = False
 
     @property
     def controller_id(self) -> str:
