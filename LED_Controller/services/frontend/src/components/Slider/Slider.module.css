@@ -1,0 +1,87 @@
+:root {
+    --thumb-width: 2rem;
+    --thumb-height: 2.85rem;
+    --thumb-border-radius: 5%;
+    --thumb-shadow-color: #1a1a1a;
+    --vertical-slider-margin: 150px;
+    --thumb-image: url('/sliderThumbVertical.svg');
+    --transparent: #00000000;
+}
+
+.sliderVertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+    height: 100% - var(--vertical-slider-margin);
+}
+
+.sliderHorizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: calc(2 * var(--vertical-slider-margin));
+    margin-top: calc(var(--vertical-slider-margin) / 1.5);
+}
+
+.sliderLabel {
+    font-weight: 800;
+}
+
+.sliderWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.1rem;
+}
+
+.sliderBar {
+    appearance: none;
+    -webkit-appearance: none;
+    width: calc(2 * var(--vertical-slider-margin));
+    height: 1rem;
+    border-radius: var(--thumb-height);
+    outline: none;
+}
+
+.vertical {
+    transform: rotate(-90deg);
+    margin-top: var(--vertical-slider-margin);
+}
+
+.vertical::-webkit-slider-thumb {
+    box-shadow: -3px 0 5px 1px var(--thumb-shadow-color) !important;
+}
+
+.sliderBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: var(--thumb-width);
+    height: var(--thumb-height);
+    border: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 5px 1px var(--thumb-shadow-color);
+    background: var(--transparent);
+    /*if not set image background color is displayed*/
+    background-image: var(--thumb-image);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.sliderBar::-moz-range-thumb {
+    width: var(--thumb-width);
+    height: var(--thumb-height);
+    border: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 5px 1px var(--thumb-shadow-color);
+    background: var(--transparent);
+    /*if not set image background color is displayed*/
+    background-image: var(--thumb-image);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}

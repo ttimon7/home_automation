@@ -1,0 +1,52 @@
+[tool.poetry]
+name = "led_controller"
+version = "1.0.0"
+description = "LED controller service."
+authors = ["Timon Tomas <ttimon7@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "sootworks" }]
+include = [
+    { path = "sootworks/led_controller/static", format = [
+        "sdist",
+        "wheel",
+    ] },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+adafruit-circuitpython-pca9685 = "^3.4.15"
+aiohttp = "^3.9.0"
+dependency-injector = "^4.41.0"
+fastapi = "^0.109.0"
+hypercorn = "^0.16.0"
+pydantic = "^2.1.1"
+pydantic-settings = "^2.0.3"
+rpi-gpio = "^0.7.1"
+sqlalchemy = "^2.0.19"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+httpx = "^0.24.1"
+mypy = "^1.5.1"
+nox = "^2023.4.22"
+pytest = "^7.3.1"
+pytest-asyncio = "^0.21.1"
+pytest-cov = "^4.0.0"
+pytest-mock = "^3.11.1"
+pytest-xdist = "^3.3.1"
+pytestarch = "^1.5.0"
+ruff = "^0.1.14"
+testcontainers = "^3.7.1"
+types-requests = "^2.31.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+exclude = ['sootworks/led_controller/persistence/alembic/.*\.py']
+strict = true
+plugins = ["pydantic.mypy"]
+
+[tool.coverage.run]
+omit = ['tests/*', 'sootworks/led_controller/persistence/alembic/*']

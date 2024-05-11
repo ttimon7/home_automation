@@ -1,0 +1,61 @@
+<svg
+  viewBox="0 0 67.733332 67.733333"
+  version="1.1"
+  id="svg1"
+  xml:space="preserve"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <filter id="inset-shadow">
+    <!-- Shadow offset -->
+    <feOffset
+      dx="0"
+      dy="0" />
+    <!-- Shadow blur -->
+    <feGaussianBlur
+      stdDeviation="1"
+      result="offset-blur" />
+    <!-- Invert drop shadow to make an inset shadow-->
+    <feComposite
+      operator="out"
+      in="SourceGraphic"
+      in2="offset-blur"
+      result="inverse" />
+    <!-- Cut colour inside shadow -->
+    <feFlood
+      flood-color="black"
+      flood-opacity=".95"
+      result="color" />
+    <feComposite
+      operator="in"
+      in="color"
+      in2="inverse"
+      result="shadow" />
+    <!-- Placing shadow over element -->
+    <feComposite
+      operator="over"
+      in="shadow"
+      in2="SourceGraphic" /> 
+  </filter>
+  <defs
+    id="defs1" />
+  <g 
+    id="layer1">
+  <g
+      id="g4"
+      transform="matrix(1.2574931,0,0,1.2574931,-103.70627,-142.7955)">
+      <g
+        id="g5"
+        transform="translate(1.1456924,0.28001381)"
+        style="stroke:none;stroke-opacity:1;fill:#0000ff;fill-opacity:1">
+      <path
+        id="path2"
+        style="fill-opacity:1;stroke:none;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+        d="m 108.12376,113.8558 c -5.81101,0 -16.612075,3.71043 -17.804735,16.15478 -1.19265,12.44436 11.152315,18.37143 11.152315,18.37143 l 0.43642,9.0449 c 0.11913,1.80021 0.71388,5.33462 3.53714,5.35803 l 7.73913,0.19499 c 1.08312,-0.004 1.90007,-1.00702 2.28662,-1.84316 0.10192,-0.22046 0.43938,-1.4084 -0.0496,-1.59363 -0.39218,-0.14856 -0.55015,0.28801 -1.84803,0.30032 -2.53442,-0.0428 -5.02766,-0.003 -7.56234,-0.003 -1.19217,0.0231 -1.47823,-2.48726 -1.51637,-3.0548 l -0.61289,-8.87793 c -0.0442,-0.90123 -0.31576,-1.14407 -0.74618,-1.81624 -9.373175,-19.4527 10.93197,-28.58743 15.48442,-26.21371 3.12071,1.62718 5.21123,7.2158 5.21123,10.83547 0,11.63606 -8.34991,14.39167 -8.34991,14.39167 -1.90736,0.83536 -2.68227,-0.27724 -2.75446,0.59695 -0.0722,0.87419 1.82842,1.8287 4.32515,0.90323 3.22123,-1.01017 9.33803,-5.48338 9.22257,-15.6965 -0.14938,-13.2128 -12.39913,-16.28751 -12.39913,-16.28751 0,0 -2.95463,-0.83568 -5.75122,-0.76601 z" />
+      <path
+        id="path3"
+        style="fill-opacity:1;stroke:none;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+        d="m 105.63955,164.11711 c 3e-4,1.61848 1.41573,2.44688 2.7466,2.44688 h 0.29197 1.60404 0.29197 c 1.33087,0 2.7463,-0.8284 2.7466,-2.44688 -0.77581,0.18617 -2.11615,0.21446 -2.11615,0.21446 h -0.89193 -1.66502 -0.89193 c 0,0 -1.34034,-0.0283 -2.11615,-0.21446 z" />
+      </g>
+    </g>
+  </g>
+</svg>

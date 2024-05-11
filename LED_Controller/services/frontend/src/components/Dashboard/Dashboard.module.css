@@ -1,0 +1,29 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rgbSection {
+    display: flex;
+	flex-direction: row;
+    align-items: center;
+    min-height: 300px;
+    width: 350px;
+    padding: 5%;
+}
+
+.wSection {
+    display: flex;
+    width: 80%;
+    min-width: 350px;
+    padding: 5%;
+}
+
+.bSection {
+    display: flex;
+	flex-direction: row;
+    align-items: center;
+    height: 130px;
+    width: 350px;
+}

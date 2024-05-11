@@ -1,0 +1,92 @@
+:root {
+    --light-color: rgba(200, 200, 200, 1.0)
+}
+
+.buttonWrapperRound {
+    height: 100%;
+    min-width: 8rem;
+    min-height: 8rem;
+    /* background-color: red; */
+}
+
+.buttonSmall {
+    width: 50%;
+    margin-top: 25%;
+
+    font-size: 150%;
+}
+
+.buttonSmall > .buttonTextWrapper {
+    margin-left: -55%;
+}
+
+.buttonBig {
+    width: 80%;
+    margin-top: 10%;
+
+    font-size: 200%;
+}
+
+.buttonRound:active {
+    box-shadow:
+        inset 3px 3px 3px 1px rgb(26, 26, 26),
+        inset -1px -1px 3px 3px rgb(42, 42, 42);
+
+    transition: all 0.5s;
+}
+
+.buttonRound {
+    aspect-ratio: 1 / 1;
+    background-color: #242424;
+    border-radius: 50%;
+    border: none;
+
+    box-shadow:
+    inset 2px 2px 3px 0px rgb(44, 44, 44),
+    -2px -2px 8px 2px rgb(44, 44, 44),
+    2px 2px 8px 3px rgb(12, 12, 12);
+
+    transition: all 0.5s;
+
+    color: var(--light-color);
+}
+
+.buttonRound:active {
+    text-shadow: 0px 0px 3px var(--light-color);
+}
+
+.buttonRound > svg {
+    aspect-ratio: 1 / 1;
+    filter: drop-shadow(0px 0px 3px var(--light-color));
+}
+
+.buttonBig > svg {
+    height: 90%;
+    aspect-ratio: 1 / 1;
+    margin-left: -60%;
+    margin-bottom: -45%;
+}
+
+.buttonSmall > svg {
+    height: 65%;
+    aspect-ratio: 1 / 1;
+    margin-left: -115%;
+    margin-bottom: -45%;
+}
+
+.buttonRound:active > svg {
+    /* Replacing the outer glow with an inline shadow defined through SVG filters
+    
+    See: <https://css-tricks.com/adding-shadows-to-svg-icons-with-css-and-svg-filters/>
+    */
+    filter: url(#inset-shadow);
+    opacity: 0.5;
+}
+
+.buttonRound > svg path {
+    fill: var(--light-color);
+}
+
+.buttonRound:focus {
+    outline: 0 !important;
+}

@@ -1,0 +1,65 @@
+<svg
+  viewBox="0 0 67.733332 67.733333"
+  version="1.1"
+  id="svg1"
+  xml:space="preserve"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <filter id="inset-shadow">
+    <!-- Shadow offset -->
+    <feOffset
+      dx="0"
+      dy="0" />
+    <!-- Shadow blur -->
+    <feGaussianBlur
+      stdDeviation="1"
+      result="offset-blur" />
+    <!-- Invert drop shadow to make an inset shadow-->
+    <feComposite
+      operator="out"
+      in="SourceGraphic"
+      in2="offset-blur"
+      result="inverse" />
+    <!-- Cut colour inside shadow -->
+    <feFlood
+      flood-color="black"
+      flood-opacity=".95"
+      result="color" />
+    <feComposite
+      operator="in"
+      in="color"
+      in2="inverse"
+      result="shadow" />
+    <!-- Placing shadow over element -->
+    <feComposite
+      operator="over"
+      in="shadow"
+      in2="SourceGraphic" /> 
+  </filter>
+  <defs id="defs1" />
+  <g id="layer1">
+    <g
+      id="g4"
+      transform="matrix(1.2574931,0,0,1.2574931,-103.70627,-142.7955)">
+      <g
+        id="g5"
+        transform="translate(1.1456924,0.28001381)"
+        style="stroke:none;stroke-opacity:1;fill-opacity:1">
+        <g
+          id="g16"
+          transform="translate(-0.29279263,0.17895281)">
+          <g id="g17">
+            <path
+              id="path16"
+              style="opacity:1;fill-opacity:1;stroke:none;stroke-width:3.87096;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+              d="m 108.68537,160.40672 c -15.057479,0.18412 -21.737043,-13.05068 -19.849409,-22.20991 1.903022,-9.2339 7.429177,-14.21748 5.167502,-17.44668 0,0 -4.761581,4.81391 -5.817008,6.02815 -4.874138,5.60756 -6.207507,13.72912 -3.773978,21.33905 3.339006,10.44146 13.012672,17.55261 23.974783,17.62391 10.9621,0.0713 20.72748,-6.91332 24.20208,-17.31045 2.59536,-7.76616 1.24135,-16.12115 -3.91902,-21.80535 -1.02041,-1.12399 -7.098,-6.03016 -7.098,-6.03016 -2.82152,3.88346 7.23028,9.07731 6.86643,20.03255 -0.26925,8.1069 -5.54263,19.60513 -19.75338,19.77889 z" />
+            <path
+              id="rect16"
+              style="opacity:1;stroke-width:3.86596;stroke-linecap:round;stroke-linejoin:round"
+              d="m 109.71511,114.31545 c 1.51292,-0.0215 2.13242,11.53312 2.15269,14.70757 0.0203,3.17445 -0.26076,13.87358 -1.85518,13.8771 l -2.71473,0.006 c -1.48212,0.003 -2.09169,-9.69572 -2.10699,-13.84515 -0.0101,-2.74019 0.50463,-14.76173 2.12187,-14.74558 z" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

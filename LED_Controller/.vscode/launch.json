@@ -1,0 +1,55 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/services/backend"
+            },
+            "args": [],
+            "justMyCode": true,
+        },
+        {
+            "name": "Python: Pytest Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                // "-v",
+                // "-s",
+                "${file}",
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/services/backend"
+            },
+            "justMyCode": false,
+        },
+        {
+            "name": "Python: LED Controller Service",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "hypercorn",
+            "args": [
+                "-w1",
+                "--reload",
+                "-b0.0.0.0:8000",
+                "sootworks.led_controller.app:app",
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/services/backend",
+                "ENVIRONMENT": "LOCAL",
+                "LOG__LOG_LEVEL": "DEBUG"
+            },
+            "justMyCode": false
+        },
+    ]
+}

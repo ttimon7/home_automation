@@ -1,0 +1,86 @@
+<svg
+  viewBox="0 0 67.733332 67.733333"
+  version="1.1"
+  id="svg1"
+  xml:space="preserve"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <filter id="inset-shadow">
+    <!-- Shadow offset -->
+    <feOffset
+      dx="0"
+      dy="0" />
+    <!-- Shadow blur -->
+    <feGaussianBlur
+      stdDeviation="1"
+      result="offset-blur" />
+    <!-- Invert drop shadow to make an inset shadow-->
+    <feComposite
+      operator="out"
+      in="SourceGraphic"
+      in2="offset-blur"
+      result="inverse" />
+    <!-- Cut colour inside shadow -->
+    <feFlood
+      flood-color="black"
+      flood-opacity=".95"
+      result="color" />
+    <feComposite
+      operator="in"
+      in="color"
+      in2="inverse"
+      result="shadow" />
+    <!-- Placing shadow over element -->
+    <feComposite
+      operator="over"
+      in="shadow"
+      in2="SourceGraphic" /> 
+  </filter>
+  <defs
+    id="defs1" />
+  <g id="layer1">
+    <g
+      id="g4"
+      transform="matrix(1.2574931,0,0,1.2574931,-103.70627,-142.7955)">
+      <g
+        id="g5"
+        transform="translate(1.1456924,0.28001381)"
+        style="stroke:none;stroke-opacity:1;fill:#000000;fill-opacity:1">
+        <g
+          id="g14"
+          transform="matrix(1.0002919,0,0,1.0002919,0.00684165,-0.07941331)"
+          style="fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1">
+          <path
+            id="rect12"
+            style="stroke-width:15.8131;stroke-linecap:round;stroke-linejoin:round"
+            d="m 83.608191,113.32733 h 44.759399 l 6.74191,6.83242 v 44.72415 c 0,1.2636 -1.01727,2.28086 -2.28086,2.28086 H 83.608191 c -1.263597,0 -2.280861,-1.01726 -2.280861,-2.28086 v -49.27572 c 0,-1.26359 1.017264,-2.28085 2.280861,-2.28085 z" />
+          <rect
+            style="fill:#ececec;stroke:none;stroke-width:7.38957;stroke-linecap:round;stroke-linejoin:round"
+            id="rect11"
+            width="31.658871"
+            height="19.972324"
+            x="92.371323"
+            y="142.99323"
+            rx="2.0235376"
+            ry="2.0235376" />
+          <rect
+            style="fill:#b3b3b3;stroke:none;stroke-width:7.00684;stroke-linecap:round;stroke-linejoin:round"
+            id="rect13"
+            width="25.210663"
+            height="17.689276"
+            x="95.593758"
+            y="113.32733" />
+          <rect
+            style="fill:#4d4d4d;stroke:none;stroke-width:7.35059;stroke-linecap:round;stroke-linejoin:round"
+            id="rect14"
+            width="6.7625265"
+            height="14.39251"
+            x="111.06598"
+            y="114.80013"
+            rx="0.93491751"
+            ry="0.93491751" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
