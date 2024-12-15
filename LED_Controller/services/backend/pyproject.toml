@@ -13,7 +13,7 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 adafruit-circuitpython-pca9685 = "^3.4.15"
 aiohttp = "^3.9.0"
 dependency-injector = "^4.41.0"

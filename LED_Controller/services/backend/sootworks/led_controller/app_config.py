@@ -7,6 +7,7 @@ from typing import Optional
 from dotenv import load_dotenv
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from sootworks.led_controller.domain.entities import InputScale
 
 logger = logging.getLogger(__name__)
 
@@ -52,6 +53,7 @@ class APIConfiguration(BaseSettings):
     api_prefix: str = "/api"
     host: str = "0.0.0.0"
     port: int = 8000
+    input_scale: InputScale = InputScale.EXPONENTIAL
 
 
 class LedControllerChannelMapping(BaseSettings):
@@ -66,7 +68,7 @@ class LedControllerSettings(BaseSettings):
 
 
 class Transition(BaseSettings):
-    duration_s: float = 0.4
+    duration_s: float = 1.2
     frame_rate: int = 30
 
 

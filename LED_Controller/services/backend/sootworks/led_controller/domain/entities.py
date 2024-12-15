@@ -16,6 +16,11 @@ class PowerState(Enum):
     OFF = "off"
 
 
+class InputScale(Enum):
+    LINEAR = "linear"
+    EXPONENTIAL = "exponential"
+
+
 # Models
 class ColorIntensity(BaseModel):
     color: Color
