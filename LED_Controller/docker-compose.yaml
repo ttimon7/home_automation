@@ -1,0 +1,6 @@
+services:
+  led_controller:
+    image: "soothworks/led-controller:latest"
+    ports:
+      - "8000:8000"
+    restart: always
