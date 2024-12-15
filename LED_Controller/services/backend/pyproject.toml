@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "led_controller"
-version = "1.1.0"
+version = "1.2.0"
 description = "LED controller service."
 authors = ["Timon Tomas <ttimon7@gmail.com>"]
 readme = "README.md"
@@ -13,7 +13,7 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
 adafruit-circuitpython-pca9685 = "^3.4.15"
 aiohttp = "^3.9.0"
 dependency-injector = "^4.41.0"
@@ -82,7 +82,7 @@ select = [
     "ERA",
     "PL",  # pylint
 ]
-ignore = ["ANN401", "ANN101", "G004", "ANN102", "N818"]
+ignore = ["ANN401", "ANN002", "ANN003", "ANN101", "G004", "ANN102", "N818"]
 unfixable = []
 extend-exclude = [
     ".nox",

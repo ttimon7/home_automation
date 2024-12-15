@@ -2,8 +2,8 @@ import logging
 
 import board
 from adafruit_pca9685 import PCA9685
-
 from sootworks.led_controller.app_config import Environment, configuration
+from sootworks.led_controller.domain.exception import retry
 from sootworks.led_controller.domain.repository import PwmRepository
 
 logger = logging.getLogger(__name__)
@@ -39,4 +39,8 @@ class PCA9685PwmRepository(PwmRepository):
         logger.info(f"Applying duty cycle ({duty_cycle}) to channel ({channel}).")
 
         if configuration.environment is not Environment.LOCAL:
-            self.pca.channels[channel].duty_cycle = duty_cycle
+
+            def _apply() -> None:
+                self.pca.channels[channel].duty_cycle = duty_cycle
+
+            retry(func=_apply, expected_errors=(OSError,))

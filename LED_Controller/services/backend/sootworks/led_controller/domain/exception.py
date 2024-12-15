@@ -1,13 +1,21 @@
 """Domain exceptions."""
 
+import logging
+import time
 from enum import Enum
 from functools import wraps
 from typing import Any, Callable, NamedTuple, Optional
 
 from fastapi import HTTPException, status
 
+logger = logging.getLogger(__name__)
+
 # Type declarations
 ErrorInfo = NamedTuple("ErrorInfo", [("message", str), ("http_status_code", int)])
+
+
+# Constants
+SANITY_RETRY_MARGIN = 100
 
 
 class LedControllerServiceErrorClass(Enum):
@@ -41,3 +49,29 @@ def translate_service_exceptions(func: Callable) -> Callable:
             ) from exc
 
     return decorator
+
+
+def retry(
+    func: Callable,
+    *args,
+    expected_errors: tuple[type[Exception], ...] | None = None,
+    limit: int = SANITY_RETRY_MARGIN,
+    timeout: float = 0.05,
+    **kwargs,
+) -> Any:
+    # TODO make this async
+    expected_errors = expected_errors if isinstance(expected_errors, tuple) else Exception
+    counter = 0
+    error_cache = None
+    while counter < limit:
+        try:
+            return func(*args, **kwargs)
+        except expected_errors as e:
+            counter += 1
+            error_cache = e
+            messaage = f"An error occurred while executing {func.__name__}. The error was: {e}. Attempting a retry"
+            logger.warning(messaage)
+            time.sleep(timeout)
+
+    message = f"Retry limit exceeded while executing {func.__name__}"
+    raise RuntimeError(message) from error_cache

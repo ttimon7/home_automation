@@ -94,6 +94,9 @@ class LedControllerService:
         power_state = self.power_relay_repository.toggle_power()
 
         if power_state is PowerState.ON:
+            time.sleep(
+                configuration.led_controller_service.power_on_delay_s,  # Waiting for the PSU to properly energize
+            )
             intensities = self.DEFAULT_INTENSITIES if self.saved_intensities is None else self.saved_intensities
             self.intensity_cache = intensities
             self._animate_lights_linear(fade_in=True, intensities=intensities)
