@@ -1,29 +1,29 @@
 .dashboard {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: var(--w);
+    gap: min(5vw, 5vh);
+    margin: 0 auto;
 }
 
 .rgbSection {
-    display: flex;
-	flex-direction: row;
-    align-items: center;
-    min-height: 300px;
-    width: 350px;
-    padding: 5%;
+    display: grid;
+    height: var(--w);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    transform: rotate(-90deg);
 }
 
 .wSection {
     display: flex;
-    width: 80%;
-    min-width: 350px;
-    padding: 5%;
+    width: 100%;
 }
 
 .bSection {
     display: flex;
-	flex-direction: row;
+    flex-direction: row;
     align-items: center;
-    height: 130px;
-    width: 350px;
+    gap: min(3vw, 3vh);
+    padding-left: 8vw;
+    padding-right: 8vw;
 }

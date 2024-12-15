@@ -2,10 +2,10 @@ import { ReactNode } from 'react'
 import style from './Button.module.css'
 
 
-export const Button = ({text=undefined, image=undefined, isBig=false, latching=true, handler}: {text?: string, image?: ReactNode, isBig?: boolean, latching?: boolean, handler?: Function}) => {
+export const Button = ({ text = undefined, image = undefined, isBig = false, latching = true, handler }: { text?: string, image?: ReactNode, isBig?: boolean, latching?: boolean, handler?: Function }) => {
     // Dynamically setting CSS variables by shadowing presets
     // See: <https://stackoverflow.com/questions/41503150/adding-style-attributes-to-a-css-class-dynamically-in-react-app>
-    const styles={ ['--light-color' as any]: `rgba(250, 180, 250, 1.0)` }
+    const styles = { ['--light-color' as any]: `rgba(250, 180, 250, 1.0)` }
 
     const handleOnPress = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         if (handler) {
@@ -15,7 +15,7 @@ export const Button = ({text=undefined, image=undefined, isBig=false, latching=t
         }
     }
 
-    return <div className={style.buttonWrapperRound} style={styles}>
+    return <div className={`${style.buttonWrapperRound} ${style.buttonRound} ${isBig ? style.buttonWrapperRoundBig : style.buttonWrapperRoundSmall}`} style={styles}>
         <button
             className={`${style.buttonRound} ${isBig ? style.buttonBig : style.buttonSmall}`}
             onClick={handleOnPress}>
