@@ -1,6 +1,3 @@
-[tool.black]
-line-length = 120
-
 [tool.ruff]
 # See https://beta.ruff.rs/docs/rules/ for details
 select = [
@@ -31,7 +28,7 @@ select = [
     "ERA",
     "PL",  # pylint
 ]
-ignore = ["ANN401", "ANN101", "G004", "ANN102", "N818"]
+ignore = ["ANN401", "ANN001", "G004", "ANN002", "INP001", "N818"]
 unfixable = []
 extend-exclude = [
     ".nox",
@@ -46,7 +43,6 @@ extend-exclude = [
     "noxfile.py",
 ]
 
-# Same as Black.
 line-length = 120
 
 # Assume Python 3.11.

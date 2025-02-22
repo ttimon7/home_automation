@@ -1,1 +1,6 @@
-.vscode/
+# IDE Configuration files
+.vscode/launch.json
+.vscode/settings.json
+
+# Appp configuration files
+.env
